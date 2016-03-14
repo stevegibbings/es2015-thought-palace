@@ -11,3 +11,5 @@ To start browser-sync -
 ```javascript
   npm start
 ```
+
+Now edit ./src/main.js as you see fit.
