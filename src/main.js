@@ -3,8 +3,8 @@
  */
 "use strict";
 
-// As if by magic.... https://github.com/zloirock/core-js
-require("babel-polyfill");
+// As if by magic.... http://babeljs.io/docs/usage/polyfill/
+import "babel-polyfill";
 
 class Bear {
   constructor(type) {
@@ -13,11 +13,17 @@ class Bear {
 
   say(words) {
     setTimeout(() => {
-      console.log(this.type, 'says', words);
+      console.log(`${this.type} says ${words}`);
     }, 1000);
   }
 }
 
-var myBear = new Bear('grizzly');
+const myBear = new Bear('grizzly');
 
 myBear.say('grrrr');
+
+let myArray = [1, 2, 3, 4];
+
+let [first, second, third, ...more] = myArray;
+
+console.log(first, second, third, more);
