@@ -49,13 +49,13 @@
 	 */
 	"use strict";
 	
-	// As if by magic.... https://github.com/zloirock/core-js
+	// As if by magic.... http://babeljs.io/docs/usage/polyfill/
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
 	__webpack_require__(1);
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
 	var Bear = function () {
 	  function Bear(type) {
@@ -70,7 +70,7 @@
 	      var _this = this;
 	
 	      setTimeout(function () {
-	        console.log(_this.type, 'says', words);
+	        console.log(_this.type + " says " + words);
 	      }, 1000);
 	    }
 	  }]);
@@ -81,6 +81,16 @@
 	var myBear = new Bear('grizzly');
 	
 	myBear.say('grrrr');
+	
+	var myArray = [1, 2, 3, 4];
+	
+	var first = myArray[0];
+	var second = myArray[1];
+	var third = myArray[2];
+	var more = myArray.slice(3);
+	
+	
+	console.log(first, second, third, more);
 
 /***/ },
 /* 1 */
