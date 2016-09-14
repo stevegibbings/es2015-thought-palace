@@ -6,7 +6,7 @@ var webpack = require('webpack');
 var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 module.exports = {
-  entry: './src/main.js',
+  entry: ['babel-polyfill','./src/main.js'],
   output: {
     path: path.join(__dirname, 'dist/js'),
     filename: 'bundle.js'
@@ -17,7 +17,13 @@ module.exports = {
         loader: 'babel-loader',
         test: path.join(__dirname, 'src'),
         query: {
-          presets: 'es2015',
+          presets: [
+            ['es2015',
+              {
+                'modules': false
+              }
+            ]
+          ],
         },
       }
     ]
